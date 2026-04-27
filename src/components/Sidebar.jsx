@@ -1,10 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, ScanLine, ClipboardList, LogOut, Hexagon } from 'lucide-react';
+import { LayoutDashboard, ScanLine, ClipboardList, LogOut, Hexagon, Box } from 'lucide-react';
 
 const menuItems = [
-  { title: 'Dashboard', path: '/admin/dashboard', icon: LayoutDashboard },
+  { title: 'Dashboard Geral (Admin)', path: '/admin/dashboard', icon: LayoutDashboard },
+  { title: 'Painel da Empresa', path: '/empresa/painel', icon: ClipboardList },
+  { title: 'Gestão de Colmeias', path: '/empresa/colmeias', icon: Box },
   { title: 'Módulo de Campo', path: '/produtor/scanner', icon: ScanLine },
-  { title: 'Relatórios', path: '/empresa/painel', icon: ClipboardList },
 ];
 
 export default function Sidebar({ isOpen, onClose, onLogout }) {
@@ -52,7 +53,7 @@ export default function Sidebar({ isOpen, onClose, onLogout }) {
         <div className="absolute bottom-0 w-full border-t border-slate-800 p-4">
           <button 
             onClick={onLogout}
-            className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition-colors hover:bg-red-900/20 hover:text-red-400"
+            className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-400 transition-colors hover:bg-red-900/20 hover:text-red-400 cursor-pointer"
           >
             <LogOut className="h-5 w-5" />
             Sair do Sistema
